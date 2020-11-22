@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Interfaces;
+using Infrastructure.Data;
 using Infrastructure.Data.Migrations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,6 +24,8 @@ using Microsoft.Extensions.Logging;
  * EF Commands
 add-migration "Initial"
 Update-Database
+Drop-database
+remove-migration
 */
 
 namespace WebShop
@@ -40,6 +44,9 @@ namespace WebShop
         {
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //Product Repository
+            services.AddScoped<IProductRespository, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,11 +3,27 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201122022522_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201122022522_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201122042310_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201122042310_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201122043448_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201122043448_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201122044107_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201122044107_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201122044705_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201122044705_InitialCreate.Designer.cs" />
+  </ItemGroup>
 <ItemGroup>
      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
   </ItemGroup>
 <ItemGroup>
   <ProjectReference Include="..\Core\Core.csproj" />
+</ItemGroup>
+<ItemGroup>
+  <Folder Include="Data\SeedData\" />
 </ItemGroup>
 </Project>
